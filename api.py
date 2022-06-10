@@ -1,16 +1,8 @@
-import logging
-import sys
-
 from flask import Blueprint, request, abort, Response
 
 from utility import guess_number
 
 api = Blueprint('api', __name__)
-
-logger = logging.getLogger(__name__)
-
-handler = logging.StreamHandler(stream=sys.stdout)
-logging.basicConfig(format='[%(asctime)s %(levelname)s]:%(message)s', handlers=[handler], level=logging.DEBUG)
 
 
 @api.route("/guess")
